@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create(); //for auto create fake data
+        \App\Models\Category::factory(5)->create(); //for auto create fake data
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             UserSeeder::class,
+            ProductSeeder::class,
         ]);
     }
 }

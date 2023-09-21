@@ -22,6 +22,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('/login', [AuthController::class, 'login']);
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/logout', [AuthController::class, 'logout'])
+    ->middleware('auth:sanctum'); //supaya logout dapat di akses setelah login tambahkan midlleware
+
 
 Route::apiResource('categories', CategoryController::class);
 Route::apiResource('products', ProductController::class);
